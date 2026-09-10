@@ -31,5 +31,10 @@ pipeline {
                 bat 'docker run -d -p 3000:3000 --name node-add-container jenkins-node-app'
             }
         }
+        stage ('Docker Container Logs') {
+            steps {
+                bat 'docker logs node-add-container'
+            }
+        }
     }
 }
